@@ -1,0 +1,24 @@
+
+WHAT IF I WNAT TO MOVE A FILE FROM ONE LOACTION IN HDFS TO OTHER LOCATION IN HDFS
+
+1.COPY COMMAND (copy from one location in hdfs to other location in hdfs)
+2.Mv  (Move from one location in hdfs to other location in hdfs)
+
+hadoop fs -ls data
+hadoop fs -mkdir datanew2
+hadoop  fs -ls data
+hadoop fs -ls
+hadoop fs -cp /user/itv007773/data/input  /user/itv007773/datanew2
+
+3. for removing the file
+hadoop fs -rm -R datanew 
+
+4.diskfree 
+hadoop fs -df -h /user/itv00537
+
+[itv007773@g01 ~]$ hadoop fs -df -h  /user/itv007773
+Filesystem                       Size    Used  Available  Use%
+hdfs://m01.itversity.com:9000  20.6 T  19.3 T    301.0 G   93%
+
+5.hdfs fsck
+ hdfs  fsck  datanew/bigLog.txt  -files -blocks -location
